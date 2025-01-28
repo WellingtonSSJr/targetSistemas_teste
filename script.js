@@ -44,7 +44,14 @@ async function dadosDiarios() {
             return dia.valor < valMinAcc ? dia.valor : valMinAcc;
         }, diasComFaturamento[0].valor); 
 
+        const maiorValor = diasComFaturamento.reduce((valMaxAcc, dia) => {
+            return dia.valor > valMaxAcc ? dia.valor : valMaxAcc;
+        }, diasComFaturamento[0].valor); 
+
+        const mediaDiaMes = 
+
         console.log(`O menor valor de faturamento diário foi: ${menorValor}`);
+        console.log(`O maior valor de faturamento diário foi: ${maiorValor}`);
     } catch (error) {
         console.error("Erro ao buscar ou processar os dados:", error);
     }
